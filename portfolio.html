@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhakti | Finance & Technology Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --accent: #4d7aff;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Mesmerizing Background Glow */
+        .background-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 30px 8%; position: fixed; width: 100%; top: 0; z-index: 100;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { font-weight: 600; letter-spacing: 4px; font-size: 0.9rem; color: var(--text-main); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { 
+            text-decoration: none; color: var(--text-dim); 
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; align-items: center; padding: 0 10%; }
+        .pre-title { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 15px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
+        .italic { font-style: italic; font-weight: 400; }
+        .gradient-text { 
+            background: linear-gradient(45deg, var(--accent), #48cae4);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-subtext { color: var(--text-dim); font-size: 1.2rem; max-width: 650px; }
+
+        /* General Layout */
+        .container { padding: 100px 10%; }
+        .section-header { display: flex; align-items: center; margin-bottom: 60px; }
+        .number { font-size: 0.8rem; color: var(--accent); margin-right: 15px; font-weight: 600; }
+        h2 { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* About & Tech Grid */
+        .grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
+        .large-text { font-size: 1.4rem; margin-bottom: 25px; color: #eee; font-weight: 300; }
+
+        .tech-stack { display: grid; gap: 30px; }
+        .tech-cat h4 { color: var(--accent); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tags span { 
+            background: var(--glass); border: 1px solid var(--border); 
+            padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-dim);
+            transition: var(--transition);
+        }
+        .tags span:hover { border-color: var(--accent); color: var(--text-main); }
+
+        /* Experience & Projects Cards */
+        .timeline-item { border-left: 1px solid var(--accent); padding: 0 0 40px 30px; position: relative; }
+        .timeline-item::before { 
+            content: ''; position: absolute; left: -5px; top: 0; 
+            width: 9px; height: 9px; background: var(--accent); border-radius: 50%;
+        }
+        .role-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+        .company-info { color: var(--accent); font-size: 0.9rem; margin-bottom: 15px; display: block; }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { 
+            background: var(--glass); padding: 40px; border: 1px solid var(--border); 
+            transition: var(--transition); border-radius: 4px;
+        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .project-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+
+        /* Blog Section */
+        .blog-list { border-top: 1px solid var(--border); }
+        .blog-row { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 30px 0; border-bottom: 1px solid var(--border); transition: var(--transition);
+            text-decoration: none; color: inherit;
+        }
+        .blog-row:hover { padding-left: 20px; background: var(--glass); }
+        .blog-row h3 { font-size: 1.1rem; font-weight: 400; }
+        .blog-date { color: var(--text-dim); font-size: 0.8rem; }
+
+        /* Contact Section */
+        .contact-box { text-align: center; padding: 100px 0; }
+        .email-link { 
+            font-size: clamp(1.5rem, 5vw, 4rem); color: var(--text-main); 
+            text-decoration: none; border-bottom: 2px solid var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.7rem; letter-spacing: 2px; }
+
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <nav>
+        <div class="logo">BHAKTI BHEDA</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#volunteering">Volunteering</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="pre-title">MBA Candidate & IT Engineer</p>
+            <h1>Synthesizing <span class="italic">Finance</span> <br> with <span class="gradient-text">Intelligent Tech</span></h1>
+            <p class="hero-subtext">Blending 1.5 years of Systems Engineering with advanced financial strategy. Passionate about Quantum Computing, Agentic AI, and the future of Banking.</p>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <div class="section-header">
+            <span class="number">01</span>
+            <h2>The Profile</h2>
+        </div>
+        <div class="grid-2">
+            <div>
+                <p class="large-text">Bridging the gap between legacy infrastructure and the future of finance.</p>
+                <p>I am an IT Engineer currently pursuing an MBA in Banking & Finance. My background as a Systems Engineer allowed me to lead complex database migrations to the cloud, while my current studies focus on the strategic side of financial institutions. I am fluent in <b>English, Hindi, Gujarati, and Marathi</b>.</p>
+                
+                <div style="margin-top: 30px;">
+                    <p style="color: var(--accent); margin-bottom: 10px;">Interests Beyond Tech:</p>
+                    <p><i class="fas fa-book"></i> Reading | <i class="fas fa-music"></i> Music</p>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <div class="tech-cat">
+                    <h4>Core Tech</h4>
+                    <div class="tags">
+                        <span>Python</span> <span>Java</span> <span>Cloud Computing</span> <span>Android Dev</span>
+                    </div>
+                </div>
+                <div class="tech-cat">
+                    <h4>Databases</h4>
+                    <div class="tags">
+                        <span>MySQL</span> <span>PostgreSQL</span> <span>Oracle DB</span> <span>Azure SQL</span>
+                    </div>
+                </div>
+                <div class="tech-cat">
+                    <h4>Future Horizon</h4>
+                    <div class="tags">
+                        <span>Quantum Computing</span> <span>Agentic AI</span> <span>FinTech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <div class="section-header">
+            <span class="number">02</span>
+            <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="company-info">IT Industry | 1.5 Years</span>
+                <h3 class="role-title">Systems Engineer</h3>
+                <p>Specialized in high-stakes database migrations from on-premise environments to Cloud (Azure). Managed enterprise-scale SQL and Oracle architectures.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="company-info">Engineering Internship</span>
+                <h3 class="role-title">Android App Developer</h3>
+                <p>Designed and developed mobile applications, focusing on Java-based architecture and user-centric workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <div class="section-header">
+            <span class="number">03</span>
+            <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="gradient-text">Agent PAR: Personal Assistant for Research</h3>
+                <p>Agent PAR researches topics on your behalf, summarizes it & stores summary in a file for future reference.</p>
+            </div>
+            <div class="project-card">
+                <h3 class="gradient-text">Agentic AI Framework</h3>
+                <p>Exploration of autonomous agents in financial data analysis, utilizing Python for predictive modeling.</p>
+            </div>
+            <div class="project-card">
+                <h3 class="gradient-text">Banking UX Study</h3>
+                <p>MBA project analyzing the digital transformation of retail banking interfaces for younger demographics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteering" class="container">
+        <div class="section-header">
+            <span class="number">04</span>
+            <h2>Volunteering</h2>
+        </div>
+        <div class="project-card" style="width: 100%; border-style: dashed;">
+            <h3>Social Impact & Tech Outreach</h3>
+            <p>I believe in using technical literacy as a tool for empowerment. 
+                I have volunteered my time to help IEEE SAKEC Student Chapter, ACM SAKEC Student Chapter, ACM Mumbai in bridging the technical gap for local communities. 
+                As part of my commitment to give back to the society in the ways I can, I have also worked with the eVidyaloka to teach the kids from the Government Schools.</p>
+        </div>
+    </section>
+
+    <section id="blog" class="container">
+        <div class="section-header">
+            <span class="number">05</span>
+            <h2>Writing</h2>
+        </div>
+        <div class="blog-list" id="blog-container">
+            </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="contact-box">
+            <p class="pre-title">Let's Connect</p>
+            <a href="mailto:bhaktinabheda@gmail.com" class="email-link">bhaktinabheda@gmail.com</a>
+            <div style="margin-top: 40px;">
+                <p style="color: var(--text-dim);">Available for roles in Quantum Computing, FinTech, and Technical Product Management.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 BHAKTI. CRAFTED WITH LOVE.</p>
+    </footer>
+
+    <script>
+        // Simple Blog Data Injection
+        const blogs = [
+            { title: "The Quantum Leap in Financial Security", date: "Jan 2026" },
+            { title: "Database Migration: Lessons from the Field", date: "Dec 2025" },
+            { title: "Why Every MBA Student Should Learn Python", date: "Nov 2025" }
+        ];
+
+        const container = document.getElementById('blog-container');
+        container.innerHTML = blogs.map(b => `
+            <a href="#" class="blog-row">
+                <h3>${b.title}</h3>
+                <span class="blog-date">${b.date}</span>
+            </a>
+        `).join('');
+
+        // Simple smooth scroll reveal effect
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(sec => {
+                const top = window.scrollY;
+                const offset = sec.offsetTop - 400;
+                if (top > offset) {
+                    sec.style.opacity = '1';
+                    sec.style.transform = 'translateY(0)';
+                    sec.style.transition = 'all 0.8s ease-out';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -286,7 +286,7 @@
 
         const container = document.getElementById('blog-container');
         container.innerHTML = blogs.map(b => `
-            <a href=${b.href} class="blog-row">
+            <a href="${b.href}" class="blog-row">
                 <h3>${b.title}</h3>
                 <span class="blog-date">${b.date}</span>
             </a>

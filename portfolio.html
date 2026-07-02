@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhakti | Finance & Technology Portfolio</title>
+    <title>Bhakti Bheda | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -207,7 +207,8 @@
             <div class="timeline-item">
                 <span class="company-info">IT Industry | 1.5 Years</span>
                 <h3 class="role-title">Systems Engineer</h3>
-                <p>Specialized in high-stakes database migrations from on-premise environments to Cloud (Azure). Managed enterprise-scale SQL and Oracle architectures.</p>
+                <p>Specialized in high-stakes database migrations from on-premise environments to Cloud - Azure.</p>
+                <p>Managed enterprise-scale SQL and Oracle architectures.</p>
             </div>
             <div class="timeline-item">
                 <span class="company-info">Engineering Internship</span>
@@ -228,8 +229,13 @@
                 <p>Agent PAR researches topics on your behalf, summarizes it & stores summary in a file for future reference.</p>
             </div>
             <div class="project-card">
+                <h3 class="gradient-text"><a href="https://curiousbhakti.github.io/Quantum-Computing-Circuits/">Quantum Computing Circuits</a></h3>
+                <p>Developed a Quantum Computing Circuits repository which contains various Quantum Alhorithms - Quantum Teleportation, Deutsch-Jotza Algorithm & more using Qiskit language. </p>
+            </div>
+            <div class="project-card">
                 <h3 class="gradient-text"><a href="https://github.com/curiousBhakti/Quantum-Random-Num-Generator.git">Quantum Random Number Generator (QRNG)</a></h3>
-                <p>Developed a Quantum Random Number Generator (QRNG) by leveraging qubit superposition to produce non-deterministic, truly random sequences. This implementation addresses the limitations of classical pseudorandomness. </p>
+                <p>Developed a Quantum Random Number Generator (QRNG) by leveraging qubit superposition to produce non-deterministic, truly random sequences. </p>
+                <p>This implementation addresses the limitations of classical pseudorandomness. </p>
             </div>
         </div>
     </section>
@@ -241,9 +247,9 @@
         </div>
         <div class="project-card" style="width: 100%; border-style: dashed;">
             <h3>Social Impact & Tech Outreach</h3>
-            <p>I believe in using technical literacy as a tool for empowerment. 
-                I have volunteered my time to help IEEE SAKEC Student Chapter, ACM SAKEC Student Chapter, ACM Mumbai in bridging the technical gap for local communities. 
-                As part of my commitment to give back to the society in the ways I can, I have also worked with the eVidyaloka to teach the kids from the Government Schools.</p>
+            <p>I believe in using technical literacy as a tool for empowerment. </p>
+            <p>I have volunteered my time to help IEEE SAKEC Student Chapter, ACM SAKEC Student Chapter, ACM Mumbai in bridging the technical gap for local communities. </p>
+            <p>As part of my commitment to give back to the society in the ways I can, I have also worked with the eVidyaloka to teach the kids from the Government Schools.</p>
         </div>
     </section>
 
@@ -273,14 +279,14 @@
     <script>
         // Simple Blog Data Injection
         const blogs = [
-            { title: "The Quantum Leap in Financial Security", date: "Jan 2026" },
-            { title: "Database Migration: Lessons from the Field", date: "Dec 2025" },
-            { title: "Why Every MBA Student Should Learn Python", date: "Nov 2025" }
+            { title: "The Quantum Leap in Financial Security", date: "June 2026", href: "https://curiousbhakti.github.io/BB-Blogs/Quantum_Leap_in_Financial_Security.html" },
+            { title: "Database Migration: Lessons from the Field", date: "June 2026", href: "https://curiousbhakti.github.io/BB-Blogs/Database_Migrations_Lessons_from_the_field.html" },
+            { title: "Why Every MBA Student Should Learn Python", date: "April 2026", href: "https://curiousbhakti.github.io/BB-Blogs/Why_Every_MBA_Student_Should_Learn_Python.html" }
         ];
 
         const container = document.getElementById('blog-container');
         container.innerHTML = blogs.map(b => `
-            <a href="#" class="blog-row">
+            <a href=${b.href} class="blog-row">
                 <h3>${b.title}</h3>
                 <span class="blog-date">${b.date}</span>
             </a>
